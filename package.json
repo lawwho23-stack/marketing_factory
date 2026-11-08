@@ -1,0 +1,55 @@
+{
+  "name": "marketing-factory",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && node scripts/prepare-standalone.mjs",
+    "start": "node scripts/start.mjs",
+    "lint": "eslint",
+    "test": "vitest run tests",
+    "typecheck": "next typegen && tsc --noEmit",
+    "setup:local": "node scripts/setup-local.mjs",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "factory": "node scripts/factory.mjs",
+    "worker": "tsx scripts/worker.ts",
+    "test:e2e": "playwright test",
+    "owner:password": "node scripts/owner-password.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1164.0",
+    "@aws-sdk/s3-request-presigner": "^3.1164.0",
+    "@electric-sql/pglite": "^0.5.15",
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/noto-sans-myanmar": "^5.3.0",
+    "@fontsource/space-mono": "^5.3.0",
+    "@node-rs/argon2": "^2.2.2",
+    "dotenv": "^18.0.9",
+    "drizzle-orm": "^0.45.4",
+    "iron-session": "^9.0.1",
+    "lucide-react": "^1.70.0",
+    "next": "16.4.5",
+    "pg": "^8.23.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "^4.6.7",
+    "tsx": "^4.23.15"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.5",
+    "prettier": "^3.9.10",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
